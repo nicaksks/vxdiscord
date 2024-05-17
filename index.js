@@ -15,7 +15,7 @@ client.once(Events.ClientReady, () => {
 
 client.on(Events.MessageCreate, async (message) => {
 
-  const twitter = message.content.match(/^\s*(https?:\/\/)?(www\.)?twitter\.com\/([^\s\/]+)\/status\/([^\s\/?]+)/);
+  const twitter = message.content.match(/^\s*(https?:\/\/)?(www\.)?x\.com\/([^\s\/]+)\/status\/([^\s\/?]+)/);
 
   if (message.author.bot) return;
   if (!twitter) return;
@@ -23,7 +23,7 @@ client.on(Events.MessageCreate, async (message) => {
   await message.delete().catch(e => console.error(e));
 
   //https://github.com/dylanpdx/BetterTwitFix - dylanpdx 💕
-  message.channel.send(`Enviado por: **${message.author}** \nhttps://vxtwitter.com/${twitter[3]}/status/${twitter[4]}`);
+  message.channel.send(`Enviado por: **${message.author}** \nhttps://fixupx.com/${twitter[3]}/status/${twitter[4]}`);
 
 });
 
